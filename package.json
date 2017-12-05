@@ -4,6 +4,7 @@
   "description": "401 JS --  Lab 26 Cowsay ===",
   "main": "webpack.config.js",
   "dependencies": {
+    "add": "^2.0.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
