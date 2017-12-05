@@ -4,8 +4,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/main.scss';
 import { say } from 'cowsay';
+import faker from 'faker';
+import '../style/main.scss';
+
 
 const main = document.getElementById('main');
 
