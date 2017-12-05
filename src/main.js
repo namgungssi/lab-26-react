@@ -2,60 +2,49 @@
 
 
 
-import './style/main.scsss';
 import React from 'react';
-import ReactDom from 'react-dom';
-import faker from 'faker';
-import {say} from 'cowsay';
+import ReactDOM from 'react-dom';
+import './style/main.scss';
+import { say } from 'cowsay';
+
+const main = document.getElementById('main');
 
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-
-  render() {
-    return (
-      <header>
-      <h1>Cowsay Lorem using Faker</h1>
-      </header>
-
-    );
-  }
+class Heading extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <header>Generate Cowsay Lorem</header>
+        )
+    }
 }
+
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: "Please enter what you'd like the cow to say!"
+        }
+    }
 
-    this.state = {
-      content: 'Lorem Sentence'
+    generateCowsay = () => {
+        console.log("testing");
+        this.setState({content: "This should be generated when clicking on button"});
     };
 
-    this.handleButton = this.handleButton.bind(this);
-  }
-
-
-  handleButton(e) {
-    console.log('button controller');
-    const content = faker.fake('{{lorem.sentence}}');
-    this.setState({content});
-  }
-
-  render() {
-    return (
-      <div>
-      <Header />
-      <pre>
-      {say({text: this.state.content})}
-      </pre>
-
-      <button onClick={this.handleButton}>Click Here!</button>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+            <Heading />
+            <pre>{say({ text: this.state.content})}</pre>
+            <button onClick={this.generateCowsay}>Click Me to Change Cowsay</button>
+            </div>
+        )
+    }
 }
 
-ReactDom.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App/>, main);

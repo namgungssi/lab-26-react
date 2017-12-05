@@ -1,94 +1,67 @@
 'use strict';
 
-
-//script & style tags
+// Dynamic Script and Style Tags
 const HTMLPlugin = require('html-webpack-plugin');
-const ExtractPlugin = require('extract-text-weback-plugin');
-//create css bundle
 
+// Makes a separate CSS bundle
+const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: `$__dirname}/src/main.js`,
-//load this
+
+  // Load this and everythning it cares about
+  entry: `${__dirname}/src/main.js`,
+
   devtool: 'source-map',
 
+  // Stick it into the "path" folder with that file name
   output: {
     filename: 'bundle.[hash].js',
-    path: `$__dirname}/build`
+    path: `${__dirname}/build`
   },
-//put into path folder
 
   plugins: [
     new HTMLPlugin({
       template: `${__dirname}/src/index.html`
     }),
-
-    new ExtractPlugin('bundle.[hash].css');
+    new ExtractPlugin('bundle.[hash].css')
   ],
 
-//if js file not in node_modules, use babel load
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    },
-//if .scss file, these get loaded in reverse order and the output of one pipe
-    {
-      test: /\.scss$/,
-      loader: ExtractPlugin.extract({
-        use: [{
-          loader: 'css-loader',
-          options: {
-            sourceMap: true
-          }
-        },
-        'resolve-url-loader',
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-            includePaths: [`${__dirname}/src/style`]
-          }
-        }
-        ]
-      })
-    },
-    }]
-  };
+    rules: [
+      // If it's a .js file not in node_modules, use the babel-loader
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      // If it's a .scss file
+      {
+        test: /\.scss$/,
+        loader: ExtractPlugin.extract({
+          // These get loaded in reverse order and the output of one pipes into the other (think of a then)
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap:true
+              }
+            },
+            'resolve-url-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+                includePaths:[`${__dirname}/src/style`]
+              }
+            }
+          ]
+        })
+      },
 
+    ]
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 //webpack will bundle up all javascript files into one file
