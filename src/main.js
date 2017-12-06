@@ -11,13 +11,12 @@ import '../style/main.scss';
 const main = document.getElementById('main');
 
 
-class Heading extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+class Header extends React.Component {
     render() {
         return (
-          <header>Generate Cowsay Lorem</header>
+        <header>
+        <h1>Generate Cowsay Lorem</h1>
+        </header>
         )
     }
 }
