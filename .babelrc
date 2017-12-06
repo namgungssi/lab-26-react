@@ -1,4 +1,5 @@
 {
-    "presets": ["react", "env", "stage-2"],
+    "presets": ["react", "env"],
+    "presets": ["stage-2"],
     "plugins": ["transform-object-rest-spread"]
 }
