@@ -15,8 +15,9 @@ class Header extends React.Component {
     render() {
         return (
         <header>
-        <h1>Generate Cowsay Lorem</h1>
+          <h1>Generate Cowsay Lorem</h1>
         </header>
+
         )
     }
 }
@@ -27,7 +28,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: "Please enter what you'd like the cow to say!"
+            content: "Enter anything and cow will say"
         }
     }
 
