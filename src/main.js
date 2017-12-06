@@ -17,7 +17,7 @@ class Heading extends React.Component {
     }
     render() {
         return (
-            <header>Generate Cowsay Lorem</header>
+          <header>Generate Cowsay Lorem</header>
         )
     }
 }
