@@ -34,7 +34,7 @@ class App extends React.Component {
 
     generateCowsay = () => {
         console.log("testing");
-        this.setState({content: "This should be generated when clicking on button"});
+        this.setState({content: "Should be generated when clicking on button"});
     };
 
     render() {
