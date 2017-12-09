@@ -2,50 +2,37 @@
 
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { say } from 'cowsay';
+import ReactDom from 'react-dom';
 import faker from 'faker';
-import '../style/main.scss';
-
-
-const main = document.getElementById('main');
+import { say } from 'cowsay';
 
 
 class Header extends React.Component {
-    render() {
-        return (
-        <header>
-          <h1>Generate Cowsay Lorem</h1>
-        </header>
-
-        )
-    }
+  render() {
+    return <h1>Generate Cowsay Lorem</h1>;
+  }
 }
-
 
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content: "Enter anything and cow will say"
-        }
-    }
-
-    generateCowsay = () => {
-        console.log("testing");
-        this.setState({content: "Should be generated when clicking on button"});
-    };
-
-    render() {
-        return (
-            <div>
-            <Heading />
-            <pre>{say({ text: this.state.content})}</pre>
-            <button onClick={this.generateCowsay}>Click Me to Change Cowsay</button>
-            </div>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.theCowSay = this.theCowSay.bind(this);
+    this.state = { content: 'click the button above' };
+  }
+  theCowSay() {
+    this.setState({ content: faker.hacker.adjective() });
+  }
+  render() {
+    return (
+      <div>
+        <Header />
+        <button className="cowsayButton" onClick={this.theCowSay}> click me </button>
+        <pre>{say({ text: this.state.content })}</pre>
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App/>, main);
+
+ReactDom.render(<App />, document.getElementById('root'));
