@@ -10,12 +10,12 @@ const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
-  // Load this and everythning it cares about
+  //Load
   entry: `${__dirname}/src/main.js`,
 
   devtool: 'source-map',
 
-  // Stick it into the "path" folder with that file name
+  //Stick it into the "path" folder
   output: {
     filename: 'bundle.[hash].js',
     path: `${__dirname}/build`
@@ -30,13 +30,13 @@ module.exports = {
 
   module: {
     rules: [
-      // If it's a .js file not in node_modules, use the babel-loader
+      //If it's a .js file not in node_modules, use the babel-loader
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
-      // If it's a .scss file
+      //.scss file
       {
         test: /\.scss$/,
         loader: ExtractPlugin.extract({
@@ -58,11 +58,8 @@ module.exports = {
             }
           ]
         })
-      },
-
+      }
     ]
   }
-
 }
-
 //webpack will bundle up all javascript files into one file
