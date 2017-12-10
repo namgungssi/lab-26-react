@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Dynamic Script and Style Tags
 const HTMLPlugin = require('html-webpack-plugin');
 // Makes a separate CSS bundle
@@ -63,6 +64,5 @@ module.exports = {
   }
 
 }
-
 
 //webpack will bundle up all javascript files into one file

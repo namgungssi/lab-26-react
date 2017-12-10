@@ -10,19 +10,15 @@ class Header extends React.Component {
     return <h1>Generate Cowsay Lorem</h1>;
   }
 }
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.theCowSay = this.theCowSay.bind(this);
-    this.state = { content: 'click the button above' };
+    this.state = { content: 'click the button' };
   }
-
   theCowSay() {
     this.setState({ content: faker.hacker.adjective() });
   }
-
   render() {
     return (
       <div>
