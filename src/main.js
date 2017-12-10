@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import faker from 'faker';
-import { say } from 'cowsay';
 import './style/app.scss';
+import faker from 'faker';
+import {say} from 'cowsay';
 
 
 class Header extends React.Component {

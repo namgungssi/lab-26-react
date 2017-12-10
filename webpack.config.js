@@ -51,7 +51,7 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
-                includePaths:[`${__dirname}/src/style`]
+                includePaths:[`${__dirname}/src/style`],
               },
             },
           ],
@@ -59,5 +59,4 @@ module.exports = {
       },
     ],
   },
-},
-//webpack will bundle up all javascript files into one file
+};
