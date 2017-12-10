@@ -1,9 +1,8 @@
 'use strict';
 
 
-// Dynamic Script and Style Tags
+
 const HTMLPlugin = require('html-webpack-plugin');
-// Makes a separate CSS bundle
 const ExtractPlugin = require('extract-text-webpack-plugin');
 
 
@@ -15,7 +14,6 @@ module.exports = {
 
   devtool: 'source-map',
 
-  //Stick it into the "path" folder
   output: {
     filename: 'bundle.[hash].js',
     path: `${__dirname}/build`
@@ -45,8 +43,8 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                sourceMap:true
-              }
+                sourceMap: true,
+              },
             },
             'resolve-url-loader',
             {
@@ -54,12 +52,12 @@ module.exports = {
               options: {
                 sourceMap: true,
                 includePaths:[`${__dirname}/src/style`]
-              }
-            }
-          ]
-        })
-      }
-    ]
-  }
-}
+              },
+            },
+          ],
+        }),
+      },
+    ],
+  },
+},
 //webpack will bundle up all javascript files into one file
