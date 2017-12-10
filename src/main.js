@@ -1,10 +1,8 @@
-'use strict';
-
-
 import React from 'react';
 import ReactDom from 'react-dom';
 import faker from 'faker';
 import { say } from 'cowsay';
+import './style/app.scss';
 
 
 class Header extends React.Component {
@@ -20,9 +18,11 @@ class App extends React.Component {
     this.theCowSay = this.theCowSay.bind(this);
     this.state = { content: 'click the button above' };
   }
+
   theCowSay() {
     this.setState({ content: faker.hacker.adjective() });
   }
+
   render() {
     return (
       <div>
