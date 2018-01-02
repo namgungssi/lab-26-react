@@ -1,14 +1,31 @@
 body {
-    color: yellow;
-    font-size: 20px;
-  }
-
-* {
-  box-sizing: border-box;
-  width: 50%;
-  font-size: 2em;
+  background-color: ivory;
+  color: #black;
 }
 
-button {
-  width: 13%;
+
+#moo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  button {
+    background-color: #pink;
+    box-shadow: 3px 3px rgb(73, 73, 73);
+    height: 50px;
+    width: 70px;
+  }
+
+
+  button:active {
+    transform: translateX(2px);
+    transform: translateY(2px);
+  }
+
+
+  pre {
+    margin: 1;
+    font-size: 4em;
+  }
 }
