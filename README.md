@@ -2,4 +2,4 @@
 
 - npm run watch => localhost:8080 for server.
 
-- click "click me" button will change cowsay output. 
+- "click me" button will update cowsay response. 
