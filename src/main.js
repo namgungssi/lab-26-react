@@ -36,7 +36,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='moo'>
+      <div id='moomoo'>
         <Header />
         <button onClick={this.updateCow}> click me </button>
         <pre>{say({text: this.state.content})}</pre>
