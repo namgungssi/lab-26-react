@@ -2,11 +2,12 @@
 
 
 
-import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 import {say} from 'cowsay';
 import faker from 'faker';
+import './style/main.scss';
+
 
 
 
